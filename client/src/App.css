@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color-third);
+}
+:root {
+  --body-color: #F9F7F7;
+  --color-white: #FFFFFF;
+  --text-color-second: #3F72AF;
+  --text-color-third: #112d4e;
+  --first-color: #3F72AF;
+  --second-color: #DBE2EF;
+  --third-color: #112D4E;
+  --fourth-color: #ffffff;
+  --fifth-color: #e2dfdf;
+  --dark-body-color: #222831;
+  --dark-text-color: #F9F7F7;
+  --dark-text-color-third: #222831;
+  --dark-first-color: #2fbae1;
+  --dark-second-color: #76ABAE;
+  --dark-third-color: #EEEEEE;
+  --dark-fifth-color: #393E46;
+  --first-shadow-color: rgba(255, 255, 255, 0.1);
+
+  --text-color: #112D4E;
+  --card-bg: #FFFFFF;
+  --card-bg2: #DBE2EF;
+  --card-hover: #3F72AF;
+  --input-border: #DBE2EF;
+  --button-bg: #3F72AF;
+  --button-text: #FFFFFF;
+  --error-color: #ff4444;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dark-mode {
+  --body-color: var(--dark-body-color);
+  --text-color-second: var(--dark-text-color);
+  --text-color-third: var(--dark-text-color-third);
+  --first-color: var(--dark-first-color);
+  --second-color: var(--dark-second-color);
+  --third-color: var(--dark-third-color);
+  --fourth-color: var(--dark-body-color);
+  --fifth-color: var(--dark-fifth-color);
+
+  --body-color: #222831;
+  --text-color: #EEEEEE;
+  --card-bg: #393E46;
+  --card-bg2: #393E46;
+  --card-hover: #00ADB5;
+  --input-border: #00ADB5;
+  --button-bg: #00ADB5;
+  --button-text: #112D4E;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  padding-top: 90px;
 }

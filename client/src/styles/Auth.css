@@ -1,0 +1,123 @@
+html, body {
+    height: 100%;
+    overflow: hidden; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--body-color);
+    color: var(--text-color-third);
+    
+  }
+  
+  
+  .auth-row {
+    display: flex;
+    height: 89vh
+  }
+  
+  .auth-image {
+    width: 50%; 
+    height: auto;
+    background-image: url('../assets/auth_image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-color: var(--body-color);
+  }
+  
+  .auth-form {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--body-color);
+    color: var(--text-color-third);
+  }
+  
+  .auth-form h1 {
+    color: var(--text-color-second);
+  }
+  
+  .input-control {
+    margin-bottom: 20px;
+  }
+  
+  .input-control label {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .input-control input {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background-color: var(--fourth-color);
+  }
+  
+  .forgot-password {
+    margin-bottom: 20px;
+    color: var(--first-color);
+    text-align: right;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .submit-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .submit-button button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button p {
+    margin-top: 20px;
+    color: var(--text-color);
+  }
+  
+  @media (max-width: 768px) {
+    .auth-container {
+      flex-direction: column;
+      overflow: auto;
+    }
+  
+    .auth-image {
+      display: none; 
+    }
+  
+    .auth-form {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  .dark-mode .auth-form {
+    background-color: var(--body-color);
+    color: var(--text-color-second);
+  }
+  
+  .dark-mode .input-control input {
+    background-color: var(--dark-fifth-color);
+    color: var(--dark-text-color);
+    border-color: var(--input-border);
+  }
+  
+  .dark-mode .forgot-password {
+    color: var(--first-color);
+  }
+  
+  .dark-mode .submit-button button {
+    background-color: var(--first-color);
+    color: var(--button-text);
+  }
+  
