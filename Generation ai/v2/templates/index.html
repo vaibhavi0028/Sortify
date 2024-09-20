@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form</title>
+    <script>
+        function showFormFields() {
+            var requestType = document.getElementById('request_type').value;
+            document.getElementById('leave_fields').style.display = 'none';
+            document.getElementById('late_submission_fields').style.display = 'none';
+            document.getElementById('outing_fields').style.display = 'none';
+
+            if (requestType == 'leave') {
+                document.getElementById('leave_fields').style.display = 'block';
+            } else if (requestType == 'late_submission') {
+                document.getElementById('late_submission_fields').style.display = 'block';
+            } else if (requestType == 'outing') {
+                document.getElementById('outing_fields').style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Submit a Request</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Your Name:</label>
+        <input type="text" name="sender_name" required><br><br>
+
+        <label>Receiver's Name:</label>
+        <input type="text" name="receiver_name" required><br><br>
+
+        <label>Receiver's Email:</label>
+        <input type="email" name="receiver_email" required><br><br>
+
+        <label>Receiver's Suffix:</label>
+        <select name="receiver_suffix" required>
+            <option value="Dr.">Dr.</option>
+            <option value="Sir">Sir</option>
+            <option value="Madam">Madam</option>
+            <option value="Sir/Madam">Sir/Madam</option>
+        </select><br><br>
+
+        <label>Request Type:</label>
+        <select id="request_type" name="request_type" onchange="showFormFields()" required>
+            <option value="">Select...</option>
+            <option value="leave">Leave</option>
+            <option value="late_submission">Late Project Submission</option>
+            <option value="outing">Outing</option>
+        </select><br><br>
+
+        <!-- Leave Fields -->
+        <div id="leave_fields" style="display:none;">
+            <label>From Date:</label>
+            <input type="date" name="leave_from_date" required><br><br>
+
+            <label>To Date:</label>
+            <input type="date" name="leave_to_date" required><br><br>
+
+            <label>Reason:</label>
+            <textarea name="leave_reason" required></textarea><br><br>
+        </div>
+
+        <!-- Late Submission Fields -->
+        <div id="late_submission_fields" style="display:none;">
+            <label>Project Details:</label>
+            <textarea name="project_details" required></textarea><br><br>
+            <label>Reason for delay, if any:</label>
+            <textarea name="reasondelay" required></textarea><br><br>
+            <label>Project Due Date:</label>
+            <input type="date" name="project_due_date" required><br><br>
+
+            <label>Upload Project File:</label>
+            <input type="file" name="project_file" accept=".pdf,.doc,.docx,.txt"><br><br>
+        </div>
+
+        <!-- Outing Fields -->
+        <div id="outing_fields" style="display:none;">
+            <label>From Date:</label>
+            <input type="date" name="outing_from_date" required><br><br>
+
+            <label>From Time:</label>
+            <input type="time" name="outing_from_time" required><br><br>
+
+            <label>To Date:</label>
+            <input type="date" name="outing_to_date" required><br><br>
+
+            <label>To Time:</label>
+            <input type="time" name="outing_to_time" required><br><br>
+
+            <label>Reason:</label>
+            <textarea name="outing_reason"></textarea><br><br>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
