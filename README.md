@@ -40,13 +40,13 @@ Sortify is designed to simplify and organize daily tasks for VIT students, provi
 Clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/vaibhavi0028/Sortify_frontend
+git clone https://github.com/vaibhavi0028/Sortify
 ```
 
 Navigate to the project directory and install dependencies.
 
 ```bash
-cd Sortify_frontend
+cd Sortify/client
 npm install
 ```
 
