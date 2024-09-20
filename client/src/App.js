@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import ScrollReveal from 'scrollreveal';
 import Navbar from './components/Navbar'; 
-import Dashboard from './pages/Dashboard';     
+import Dashboard from './pages/Dashboard';    
+import Landing from './pages/Landing'; 
+import Footer from './components/Footer';
 import Auth from "./pages/Auth";  
 import './App.css';
 
@@ -15,7 +17,9 @@ function AppContent() {
       <Routes>
         <Route exact path="/auth/signin" element={<Auth />} />
         <Route exact path="/auth/signup" element={<Auth />} />
-        <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/" element={<Landing />} />
+        <Route exact path="/home" element={<Landing />} />
       </Routes>
     </>
   );
@@ -92,6 +96,7 @@ function App() {
         <main>
           <AppContent />
         </main>
+        {/* <Footer /> */}
       </div>
     </Router>
   );

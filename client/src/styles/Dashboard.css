@@ -1,0 +1,243 @@
+body{
+    overflow-y: hidden;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  height: 82.1vh;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.left-container {
+  width:60%;
+  margin-right: 20px;
+}
+
+.right-container {
+  width:40%;
+  padding-left: 15px;
+}
+
+.greeting {
+  margin-bottom: 20px;
+  color: var(--text-color-third);
+}
+.outer-box-container {
+  display: flex;
+  justify-content: center;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.box {
+  position: relative;
+  height: 200px;
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+
+.box1 {
+  background: url("../assets/img1.jpg") center/cover no-repeat;
+}
+
+.box2 {
+  background: url("../assets/img2.jpg") center/cover no-repeat;
+}
+
+.box3 {
+  background: url("../assets/img3.jpg") center/cover no-repeat;
+}
+
+.box4 {
+  background: url("../assets/img4.jpg") center/cover no-repeat;
+}
+.box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.box-content {
+  text-align: center;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--fifth-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 20px 30px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-right:25px;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-info h3 {
+  margin: 0;
+  color: var(--text-color-primary);
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  margin: 5px 0;
+  color: var(--text-color-secondary);
+}
+
+.task-list li strong {
+  color: var(--text-color-primary);
+}
+
+.dark-mode .dashboard {
+  background-color: var(--body-color);
+}
+
+.dark-mode .greeting {
+  color: var(--text-color-second);
+}
+
+.dark-mode .box1 {
+  background-color: var(--dark-first-color);
+}
+
+.dark-mode .box2 {
+  background-color: var(--dark-second-color);
+}
+
+.dark-mode .box3 {
+  background-color: var(--dark-third-color);
+}
+
+.dark-mode .box4 {
+  background-color: var(--dark-button-bg);
+}
+
+.notices-wrapper {
+  display: flex;
+  flex: 1;
+  background-color: var(--fifth-color);
+  padding: 15px 2.5%;
+  border-radius: 5px;
+  margin: 50px 20px 30px 20px;
+  flex-direction: row;
+  gap: 5%;
+  height: 50%;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.notices-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--fourth-color);
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.notices-wrapper h2 {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: var(--third-color);
+}
+
+.notices-marquee {
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.notice-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #e2dfdf;
+  border-radius: 3px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.notice-item:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 100%;
+    height: 150px;
+    max-width: 300px;
+  }
+
+  .box-content {
+    font-size: 0.8rem;
+  }
+
+  .left-container,
+  .right-container {
+    margin: 0;
+    flex: 1 1 100%;
+  }
+
+  .notices-wrapper {
+    height: 250px;
+    margin: 30px 10px 20px 10px;
+  }
+
+  .profile-card {
+    display: none;
+  }
+}
