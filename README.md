@@ -60,7 +60,7 @@ Experience the ease of managing your daily tasks with Sortify!
 <br><br>
 
 ## :handshake: Team - ByteBond
-Vaibhavi - 22MIC0046
-Maneet Gupta - 24BBS0101
-Prince kosthi - 24BBS0004
-G.Pavan Kumar Reddy - 22BCE2115
+Vaibhavi - 22MIC0046 <br>
+Maneet Gupta - 24BBS0101 <br>
+Prince kosthi - 24BBS0004 <br>
+G.Pavan Kumar Reddy - 22BCE2115 
