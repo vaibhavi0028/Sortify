@@ -1,0 +1,113 @@
+.greeting {
+    margin-bottom: 20px;
+    color: var(--text-color-third);
+  }
+  
+  .dark-mode .greeting {
+    color: var(--text-color-second);
+  }
+  
+  .segregation {
+    padding: 5px 20px;
+    background: var(--body-color);
+  }
+  
+  .segregation h1 {
+    color: var(--text-color);
+  }
+  
+  .keyword-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .keyword-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid var(--first-color);
+    color: var(--text-color-third);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dark-mode .keyword-btn {
+    border: 2px solid var(--dark-first-color);
+    color: var(--dark-text-color);
+  }
+  
+  .keyword-btn.selected {
+    background-color: var(--first-color);
+    color: var(--button-text);
+  }
+  
+  .dark-mode .keyword-btn.selected {
+    background-color: var(--dark-first-color);
+    color: var(--dark-text-color);
+  }
+  
+  .add-keyword-btn {
+    border: 2px dashed var(--first-color);
+  }
+  
+  .input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .keyword-input {
+    padding: 10px;
+    border: 2px solid var(--first-color);
+    border-radius: 50px;
+    width: 200px;
+  }
+  
+  .add-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--first-color);
+    color: var(--button-text);
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  
+  .mail-content {
+    margin-top: 30px;
+  }
+  
+  .mail-section {
+    margin-bottom: 30px;
+  }
+  
+  .mail-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 0;
+  }
+  
+  .mail-item {
+    flex: 0 0 auto;
+    padding: 10px;
+    min-width: 200px;
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dark-mode .mail-item {
+    background-color: var(--card-bg2);
+    color: var(--dark-text-color);
+  }
+  
+  .no-mails {
+    color: var(--error-color);
+    font-weight: bold;
+  }
+  

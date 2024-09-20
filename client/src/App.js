@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';    
 import Landing from './pages/Landing'; 
 import Footer from './components/Footer';
+import Segregation from './pages/segregation';
 import Auth from "./pages/Auth";  
 import './App.css';
 
@@ -20,6 +21,7 @@ function AppContent() {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/home" element={<Landing />} />
+        <Route exact path="/segregation" element={<Segregation />} />
       </Routes>
     </>
   );
