@@ -9,11 +9,10 @@ import Segregation from './pages/segregation';
 import Generator from './pages/generator';
 import Auth from "./pages/Auth";  
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ServiceHome from './pages/ServiceHome'; // Ensure the path is correct
 
 function AppContent() {
   const location = useLocation();
+  const isAuthPath = location.pathname.includes("/auth");
 
   return (
     <>
@@ -25,7 +24,6 @@ function AppContent() {
         <Route exact path="/home" element={<Landing />} />
         <Route exact path="/segregation" element={<Segregation />} />
         <Route exact path="/generator" element={<Generator />} />
-        <Route exact path='/services/*' element={<ServiceHome />} /> {/* Note the change here */}
       </Routes>
     </>
   );
@@ -96,13 +94,15 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main>
-        <AppContent />
-      </main>
-      {/* <Footer /> */}
-    </div>
+    <Router>
+      <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <main>
+          <AppContent />
+        </main>
+        {/* <Footer /> */}
+      </div>
+    </Router>
   );
 }
 
