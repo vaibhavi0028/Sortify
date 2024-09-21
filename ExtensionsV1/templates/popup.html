@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Categorizer & Request Submitter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Email Categorizer & Request Submitter</h1>
+    <div id="main-menu">
+        <button id="view-emails">View Categorized Emails</button>
+        <button id="submit-request">Submit a Request</button>
+    </div>
+    <div id="email-categories" style="display: none;">
+        <h2>Email Categories</h2>
+        <div id="category-list"></div>
+        <button id="back-to-menu">Back to Menu</button>
+    </div>
+    <div id="request-form" style="display: none;">
+        <h2>Submit a Request</h2>
+        <form id="request-submission-form">
+            <label for="request-type">Request Type:</label>
+            <select id="request-type" name="request-type" required>
+                <option value="">Select...</option>
+                <option value="leave">Leave</option>
+                <option value="late-submission">Late Submission</option>
+                <option value="outing">Outing</option>
+            </select>
+            <div id="form-fields"></div>
+            <button type="button" id="show-confirmation">Preview Message</button>
+        </form>
+        <button id="back-to-menu-from-form">Back to Menu</button>
+    </div>
+    
+    <div id="confirmation-message" style="display: none;">
+        <h3>Confirmation Message</h3>
+        <p id="generated-message" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 10px;"></p>
+        <button id="final_submit">Submit Request</button>
+        <button id="cancel_submit">Cancel</button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

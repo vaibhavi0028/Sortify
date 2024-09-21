@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Email Categorizer",
+  "version": "1.0",
+  "description": "Quickly access email categories and submit requests",
+  "permissions": ["identity", "storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "oauth2": {
+    "client_id": "YOUR_CLIENT_ID_HERE",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/gmail.send"
+    ]
+  }
+}
