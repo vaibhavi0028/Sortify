@@ -1,1 +1,0 @@
-Make sure to download and place the credentials file in this directory

@@ -88,7 +88,7 @@ function Generator() {
     <div className="generator">
       <div className="greeting">
         <h1>
-          Hello, <strong>Name!</strong>
+          Hello, <strong>Vaibhavi!</strong>
         </h1>
         <hr />
       </div>
@@ -101,7 +101,7 @@ function Generator() {
             theme="snow"
             modules={modules}
             formats={formats}
-            placeholder="write your content ...."
+            placeholder="write your mail ...."
             onChange={handleProcedureContentChange}
             style={{ height: "220px" }}
           ></ReactQuill>

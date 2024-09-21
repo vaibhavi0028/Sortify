@@ -91,7 +91,7 @@ function Navbar({ darkMode, setDarkMode }) {
             "home",
             "Mail Segregation",
             "Mail Generator",
-            "Complaints",
+            // "Complaints",
             "Services",
           ].map((section) => {
             const words = section.split(" ");

@@ -106,7 +106,7 @@ body{
   background-color: var(--fifth-color);
   padding: 15px;
   border-radius: 8px;
-  margin: 10px 10px 30px 20px;
+  margin: 10px 10px 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--text-color);
   width:30%;
@@ -168,10 +168,10 @@ body{
   background-color: var(--fifth-color);
   padding: 15px 2.5%;
   border-radius: 5px;
-  margin: 50px 20px 30px 20px;
+  margin: 20px 20px 30px 20px;
   flex-direction: row;
   gap: 5%;
-  height: 40%;
+  height: 45%;
   align-items: stretch;
   overflow: hidden;
 }
@@ -208,7 +208,10 @@ body{
   border-radius: 3px;
   transition: transform 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
+  color: #112D4E;
+  font-weight: 600;
 }
+
 
 .notice-item:hover {
   background-color: #e0e0e0;

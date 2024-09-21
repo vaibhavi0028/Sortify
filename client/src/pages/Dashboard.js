@@ -30,7 +30,7 @@ function Dashboard() {
       <div className="left-container">
         <div className="greeting">
           <h1>
-            Hello, <strong>Name!</strong>
+            Hello, <strong>Vaibhavi!</strong>
           </h1>
           <hr />
         </div>
@@ -41,10 +41,10 @@ function Dashboard() {
               <strong>Registration No.:</strong> 22BCE0245
             </p>
             <p>
-              <strong>Name:</strong> Name
+              <strong>Name:</strong> Vaibhavi
             </p>
             <p>
-              <strong>Email:</strong> name@gmail.com
+              <strong>Email:</strong> vaibhavi.2022@vit.ac.in
             </p>
           </div>
         </div>
