@@ -1,27 +1,28 @@
-// ServiceHome.js
+// ServiceHome.jsx
 import React from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
-import OngoingProcess from './OngoingProcess'; // Adjust the path as needed
-import Services from './Services'; // Adjust the path as needed
+import OngoingProcess from './OngoingProcess'; 
+import Services from './Services'; 
+import '../styles/Services.css';
 
 const ServiceHome = () => {
   return (
     <div className="service-home-container">
-      <nav>
-        <ul>
+      <nav className="service-nav">
+        <ul className="service-nav-list">
           <li>
-            <Link to="ongoing">Ongoing Processes</Link> {/* Relative path */}
+            <Link to="ongoing" className="service-link">Ongoing Processes</Link>
           </li>
           <li>
-            <Link to="request">Request Service</Link> {/* Change this path if needed */}
+            <Link to="request" className="service-link">Request Service</Link>
           </li>
         </ul>
       </nav>
 
-      <div className="content">
+      <div className="service-content">
         <Routes>
           <Route path="ongoing" element={<OngoingProcess />} />
-          <Route path="request" element={<Services />} /> {/* Adjust as needed */}
+          <Route path="request" element={<Services />} />
         </Routes>
       </div>
     </div>

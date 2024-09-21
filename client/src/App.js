@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Segregation from './pages/segregation';
 import Generator from './pages/generator';
 import Auth from "./pages/Auth";  
+import ServiceHome from './pages/ServiceHome'; 
 import './App.css';
 
 function AppContent() {
@@ -24,6 +25,7 @@ function AppContent() {
         <Route exact path="/home" element={<Landing />} />
         <Route exact path="/segregation" element={<Segregation />} />
         <Route exact path="/generator" element={<Generator />} />
+        <Route exact path="/services/*" element={<ServiceHome/>} />
       </Routes>
     </>
   );
