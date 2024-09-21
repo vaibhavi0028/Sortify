@@ -1,0 +1,106 @@
+/* General Styles */
+.on-process-list {
+    padding: 20px;
+}
+
+.headers {
+    text-align: center;
+    color: rgb(24, 24, 108);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Table Styles */
+.process-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list-table-format {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr; /* Adjust as needed */
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+}
+
+.list-table-format.title {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    border-top: none; /* Remove top border for the title row */
+}
+
+.table-header {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.table-row {
+    border-bottom: 1px solid #cacaca;
+}
+
+.table-row.completed {
+    background-color: #d4edda; /* Light green for completed processes */
+}
+
+.list-table-format:last-child {
+    border-bottom: none; /* Remove bottom border for the last row */
+}
+
+.list-table-format:not(.title) {
+    border-bottom: 1px solid #cacaca; /* Add bottom border for all other rows */
+}
+
+/* Padding for table data */
+.list-table-format div {
+    padding: 5px; /* Add padding for better spacing */
+}
+
+/* Image and link styles */
+.list-table-format img {
+    width: 100px;
+}
+
+.list-table-format a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Button Styles */
+.approve-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.approve-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Status alignment */
+.status {
+    text-align: right; /* Align status to the right */
+}
+
+/* Loading and Error States */
+.loading, .error {
+    text-align: center;
+    color: red; /* Change color based on type */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .list-table-format {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 15px;
+    }
+    .list-table-format.title {
+        display: none;
+    }
+}

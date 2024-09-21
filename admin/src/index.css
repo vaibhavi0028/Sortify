@@ -1,0 +1,92 @@
+/* Existing CSS rules */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #a9a9a9;
+}
+
+.app-content {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-img-upload img {
+  width: 120px;
+}
+
+.add-paper-name {
+  width: max(40%, 280px);
+}
+
+.add-paper-name input {
+  padding: 10px;
+}
+
+.add-paper-types {
+  display: flex;
+  gap: 30px;
+}
+
+.add-paper-types select, .add-paper-types input {
+  max-width: 120px;
+  padding: 10px;
+}
+
+.add-paper-date {
+  width: max(40%, 280px);
+}
+
+.add-paper-date input {
+  padding: 10px;
+}
+
+.add-paper-link {
+  width: max(40%, 280px);
+}
+
+.add-paper-link input {
+  padding: 10px;
+}
+
+.add-paper-slot {
+  width: max(40%, 280px);
+}
+
+.add-paper-slot input {
+  padding: 10px;
+}
+
+.add-button {
+  max-width: 120px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+

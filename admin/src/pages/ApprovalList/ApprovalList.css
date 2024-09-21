@@ -1,0 +1,102 @@
+.list-table-format.approved {
+    background-color: #d4edda; /* Light green background for approved/completed papers */
+}
+
+.headers {
+    text-align: center;
+    color: rgb(24, 24, 108);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.list-table {
+    width: 100%;
+}
+
+.list-table-format {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+}
+
+.list-table-format.title {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.list-table-format img {
+    width: 100px;
+}
+
+.list-table-format a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.cursor {
+    cursor: pointer;
+    text-align: center;
+}
+
+.approve-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.approve-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.list-table-format {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr; /* Include all necessary columns */
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-top: 1px solid #cacaca; /* Add top border for the first row */
+    border-bottom: 1px solid #cacaca; /* Add bottom border for each row */
+    font-size: 13px;
+}
+
+.list-table-format.title {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    border-top: none; /* Remove top border for the title row */
+}
+
+.list-table-format:last-child {
+    border-bottom: none; /* Remove bottom border for the last row */
+}
+
+.list-table-format:not(.title) {
+    border-bottom: 1px solid #cacaca; /* Add bottom border for all other rows */
+}
+
+.list-table-format div {
+    padding: 5px; /* Add padding for better spacing */
+}
+
+.status {
+    text-align: right; /* Align status to the right */
+}
+
+
+@media (max-width: 600px) {
+    .list-table-format {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 15px;
+    }
+    .list-table-format.title {
+        display: none;
+    }
+}
