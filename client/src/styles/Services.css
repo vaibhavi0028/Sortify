@@ -50,8 +50,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
   padding: 40px 0;
+  flex-direction: column;
 }
 
 .service-box {
@@ -169,7 +169,7 @@
 .process-item {
   background-color: var(--card-bg2);
   padding: 1.5rem 2.5rem;
-  margin-top: 100px;
+  margin-top: 10px;
   margin-bottom: 5px;
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--first-shadow-color);
@@ -287,7 +287,7 @@
 .services-form {
   display: flex;
   flex-direction: column;
-  margin-top:90px;
+  margin-top:20px;
 }
 
 .form-group {
@@ -379,4 +379,82 @@ body.dark-mode {
 .btn.dark-mode {
   background-color: var(--dark-button-bg);
   color: var(--dark-button-text);
+}
+
+.service-home-container {
+  position: relative;
+  padding: 20px;
+}
+
+.service-nav {
+  margin-bottom: 20px;
+}
+
+.service-nav-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.service-nav-list li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.service-link {
+  text-decoration: none;
+  color: #007BFF; /* Bootstrap primary color */
+}
+
+.servicesh1{
+  color: var(--text-color);
+}
+
+.service-boxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap:50px;
+}
+
+.service-box {
+  position: relative;
+  width: 400px; /* Adjust as necessary */
+  height: 250px; /* Adjust as necessary */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+}
+
+.service-box.ongoing {
+  background-image: url('../assets/img1.jpg'); /* Replace with your image */
+}
+
+.service-box.request {
+  background-image: url('../assets/img1.jpg'); /* Replace with your image */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Overlay color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  transition: opacity 0.3s;
+}
+
+.service-box:hover .overlay {
+  opacity: 1;
 }

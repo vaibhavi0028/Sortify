@@ -60,12 +60,9 @@ const OngoingProcess = () => {
     fetchOngoingProcesses();
   }, []);
 
-  if (loading) {
-    return <div className="loading">Loading...</div>;
-  }
-
   return (
     <div className="ongoing-process-container">
+      <h1 className="servicesh1">Request Services</h1>
       {ongoingProcesses.length > 0 ? (
         <div className="ongoing-process-list">
           {ongoingProcesses.map((process) => (
