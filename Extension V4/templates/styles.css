@@ -11,7 +11,7 @@ body {
 
 #sidebar {
   background-color: #f9f7f7;
-  width: 300px;
+  width: 320px;
   height: 100%;
   position: fixed;
   right: 0;
@@ -89,14 +89,14 @@ input,
 textarea {
   margin-bottom: 10px;
   display: block;
-  width: 280px;
+  width: 300px;
   text-align: left;
 }
 
 select {
   margin-bottom: 10px;
   display: block;
-  width: 298px;
+  width: 318px;
   text-align: left;
 }
 
