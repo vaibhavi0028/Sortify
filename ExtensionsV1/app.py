@@ -100,19 +100,6 @@ def classify_emails(emails):
 
     return categorized
 
-def get_gmail_service():
-    """Get the Gmail service using OAuth credentials."""
-    creds = None
-    if 'credentials' in session:
-        creds = Credentials(**session['credentials'])
-        if creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-
-    if not creds or not creds.valid:
-        return None
-
-    return build('gmail', 'v1', credentials=creds)
-
 def get_email_body(payload):
     '''Extract and format the email body from the payload, handling different formats.'''
     body = ''
