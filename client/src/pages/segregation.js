@@ -47,6 +47,13 @@ function Segregation() {
 
   return (
     <div className="segregation">
+        <div className="greeting">
+          <h1>
+            Hello, <strong>Name!</strong>
+          </h1>
+          <hr />
+        </div>
+        <div style={{ paddingLeft: '20px' }}>
       <h1>Select your topics</h1>
       <div className="keyword-container">
         {keywords.map((keyword) => (
@@ -109,6 +116,7 @@ function Segregation() {
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }

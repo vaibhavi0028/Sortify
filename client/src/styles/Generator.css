@@ -1,0 +1,18 @@
+.generator {
+  padding: 5px 20px;
+  background: var(--body-color);
+  min-height: 86.3vh;
+}
+
+.greeting {
+  margin-bottom: 20px;
+  color: var(--text-color-third);
+}
+
+.dark-mode .greeting {
+  color: var(--text-color-second);
+}
+
+.text-editor{
+    margin: 20px 0;
+}
