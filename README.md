@@ -3,7 +3,7 @@
 <h1>Sortify: Simplify Your Daily VIT Tasks</h1>
 <p>This repository houses the front-end codebase for Sortify, a project developed to streamline daily tasks for VIT students. Collaborating with an amazing tech team, we utilized React.js and integrated various APIs to create an efficient and user-friendly experience. Join us in revolutionizing how you manage your day-to-day activities! 🚀📧</p>
 
-<h4> <a href="https://github.com/vaibhavi0028/Sortify_frontend/blob/main/README.md"> Documentation </a> <span> · </span> <a href="https://www.canva.com/design/DAGRIWj0wXU/2YHfZKq2mmrqDY19_oHxwA/edit?utm_content=DAGRIWj0wXU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"> Presentation </a> 
+<h4> <a href="https://sortify-bytebond.vercel.app/">View Website</a> <span> ·  <a href="https://github.com/vaibhavi0028/Sortify_frontend/blob/main/README.md"> Documentation </a> <span> · </span> <a href="https://www.canva.com/design/DAGRIWj0wXU/2YHfZKq2mmrqDY19_oHxwA/edit?utm_content=DAGRIWj0wXU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"> Presentation </a> 
 <br><br>
 </div>
 

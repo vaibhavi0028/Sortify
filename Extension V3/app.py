@@ -46,6 +46,8 @@ KEYWORDS = {
     'account': 'Security',
     'your': 'Your Updates'
 }
+
+
 def creds_to_dict(creds):
     """Convert credentials to a serializable dictionary."""
     return {
@@ -56,6 +58,8 @@ def creds_to_dict(creds):
         'client_secret': creds.client_secret,
         'scopes': creds.scopes
     }
+
+
 def filter_emails_by_date(emails, start_date, end_date):
     """Filter categorized emails by date range."""
     filtered = {}
@@ -72,20 +76,22 @@ def filter_emails_by_date(emails, start_date, end_date):
         return emails
 
     return filtered
+
+
 def classify_emails(emails):
     """Categorize emails based on keywords and sender addresses."""
-    categorized = { 
-        'Notices': [], 
+    categorized = {
+        'Notices': [],
         'Proctor': [],
-        'Events': [], 
-        'Special Events': [], 
-        'Opportunity': [], 
-        'Sports': [], 
-        'Workshop': [], 
-        'Scholarships': [], 
-        'Your Updates': [], 
-        'Security': [], 
-        'Others': [] 
+        'Events': [],
+        'Special Events': [],
+        'Opportunity': [],
+        'Sports': [],
+        'Workshop': [],
+        'Scholarships': [],
+        'Your Updates': [],
+        'Security': [],
+        'Others': []
     }
 
     for email in emails:
@@ -100,10 +106,11 @@ def classify_emails(emails):
 
     return categorized
 
+
 def get_email_body(payload):
     '''Extract and format the email body from the payload, handling different formats.'''
     body = ''
-    
+
     def decode_body(part):
         """Helper function to decode the email body."""
         if 'data' in part['body']:
@@ -144,11 +151,12 @@ def get_email_body(payload):
         body = body.replace('\n', '<br>').strip()
     return body
 
+
 def fetch_emails(service):
     """Fetch emails from the Gmail API."""
     emails = []
     try:
-        results = service.users().messages().list(userId='me', maxResults=50).execute()
+        results = service.users().messages().list(userId='me', maxResults=20).execute()
         messages = results.get('messages', [])
 
         for message in messages:
@@ -172,8 +180,10 @@ def fetch_emails(service):
 
     return emails
 
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 # Function to get Gmail API credentials, including creating token.json if missing
 def get_gmail_service():
@@ -194,6 +204,7 @@ def get_gmail_service():
                 token.write(creds.to_json())
     return build('gmail', 'v1', credentials=creds)
 
+
 # Function to send email using Gmail API
 def send_email(receiver_email, subject, message):
     try:
@@ -210,6 +221,8 @@ def send_email(receiver_email, subject, message):
         return "Email sent successfully!"
     except Exception as e:
         return f"Failed to send email: {str(e)}"
+
+
 # Helper functions (keep all existing helper functions)
 
 # Modified routes and new API endpoints
@@ -219,6 +232,7 @@ def api_authorize():
     flow.redirect_uri = url_for('api_oauth2callback', _external=True)
     authorization_url, _ = flow.authorization_url(prompt='consent')
     return jsonify({'authorization_url': authorization_url})
+
 
 @app.route('/api/oauth2callback')
 def api_oauth2callback():
@@ -230,13 +244,14 @@ def api_oauth2callback():
     session['credentials'] = creds_to_dict(creds)
     return jsonify({'success': True, 'message': 'Authentication successful'})
 
+
 @app.route('/api/email_categories')
 def api_emails():
     global KEYWORDS
     service = get_gmail_service()
     if not service:
         return jsonify({'error': 'Not authenticated'}), 401
-    
+
     emails = fetch_emails(service)
     categorized_emails = classify_emails(emails)
 
@@ -249,9 +264,8 @@ def api_emails():
 
     if start_date and end_date:
         categorized_emails = filter_emails_by_date(categorized_emails, start_date, end_date)
-    
-    return jsonify(categorized_emails)
 
+    return jsonify(categorized_emails)
 
 
 @app.route('/api/email/<email_id>')
@@ -280,10 +294,30 @@ def api_view_email(email_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
 @app.route('/api/logout', methods=['POST'])
 def api_logout():
-    session.clear()
-    return jsonify({'success': True, 'message': 'Logged out successfully'})
+    try:
+        session.clear()
+        if os.path.exists('token.json'):
+            os.remove('token.json')
+        
+        flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+        flow.redirect_uri = url_for('api_oauth2callback', _external=True)
+        authorization_url, _ = flow.authorization_url(prompt='consent')
+
+        return jsonify({
+            'success': True, 
+            'message': 'Logged out successfully. Please authorize access again.', 
+            'authorization_url': authorization_url
+        })
+    except Exception as e:
+        print(f"Error during logout: {e}")
+        return jsonify({
+            'success': False, 
+            'message': 'An error occurred while logging out. Please try again.'
+        }), 500
+
 
 @app.route('/api/submit_request', methods=['POST'])
 def api_submit_request():
@@ -295,12 +329,12 @@ def api_submit_request():
         receiver_email = data.get('receiver-email')
         receiver_suffix = data.get('receiver-suffix')
         request_type = data.get('request-type')
-
+        subject_user = data.get('subject')
+        subject_final = model.generate_content(f"generate a subject regarding {subject_user}")
         if not all([sender_name, receiver_name, receiver_email, request_type]):
             return jsonify({'error': 'Missing required fields'}), 400
 
         response_text = f"{receiver_suffix} {receiver_name},\n\n"
-        
         # Handle specific request types
         if request_type == 'leave':
             from_date = data.get('leave-from-date')
@@ -318,7 +352,7 @@ def api_submit_request():
             except Exception as e:
                 print(f"Error generating leave request: {e}")
                 return jsonify({'error': 'Failed to generate leave request'}), 500
-        
+
         # Similar handling for 'late-submission' and 'outing'...
 
         return jsonify({
@@ -327,21 +361,39 @@ def api_submit_request():
             'receiver-email': receiver_email,
             'receiver-suffix': receiver_suffix,
             'request-type': request_type,
-            'details': response_text
+            'details': response_text,
+            'subject': subject_final.text
         })
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': 'Failed to generate the request message'}), 500
-    
+
+
 @app.route('/api/final_submit', methods=['POST'])
 def api_final_submit():
     data = request.json
+    print(data)
     receiver_email = data.get('receiver_email')
-    receiver_suffix = data.get('receiver_suffix')
+    subject = data.get('subject')
     details = data.get('details')
-
-    result = send_email(receiver_email, "Request Confirmation", details)
+    result = send_email(receiver_email, subject, details)
     return jsonify({'message': result})
+
+
+# Check if token.json exists (API endpoint)
+@app.route('/api/check_token', methods=['GET'])
+def check_token():
+    token_exists = os.path.exists('token.json')
+    return jsonify({'token_exists': token_exists})
+
+
+# Logout (deletes token.json and clears session)
+@app.route('/api/logout', methods=['POST'])
+def logout():
+    if os.path.exists('token.json'):
+        os.remove('token.json')
+    session.clear()  # Clear any session data
+    return jsonify({'success': True, 'message': 'Logged out successfully'})
 
 if __name__ == '__main__':
     app.run(debug=True)
