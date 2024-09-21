@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import ScrollReveal from 'scrollreveal';
 import Navbar from './components/Navbar'; 
 import Dashboard from './pages/Dashboard';    
@@ -16,18 +16,16 @@ function AppContent() {
   const isAuthPath = location.pathname.includes("/auth");
 
   return (
-    <>
-      <Routes>
-        <Route exact path="/auth/signin" element={<Auth />} />
-        <Route exact path="/auth/signup" element={<Auth />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
-        <Route exact path="/" element={<Landing />} />
-        <Route exact path="/home" element={<Landing />} />
-        <Route exact path="/segregation" element={<Segregation />} />
-        <Route exact path="/generator" element={<Generator />} />
-        <Route exact path="/services/*" element={<ServiceHome/>} />
-      </Routes>
-    </>
+    <Routes>
+      <Route exact path="/auth/signin" element={<Auth />} />
+      <Route exact path="/auth/signup" element={<Auth />} />
+      <Route exact path="/dashboard" element={<Dashboard />} />
+      <Route exact path="/" element={<Landing />} />
+      <Route exact path="/home" element={<Landing />} />
+      <Route exact path="/segregation" element={<Segregation />} />
+      <Route exact path="/generator" element={<Generator />} />
+      <Route exact path="/services/*" element={<ServiceHome />} />
+    </Routes>
   );
 }
 
@@ -96,15 +94,13 @@ function App() {
   }, [darkMode]);
 
   return (
-    <Router>
-      <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <main>
-          <AppContent />
-        </main>
-        {/* <Footer /> */}
-      </div>
-    </Router>
+    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <main>
+        <AppContent />
+      </main>
+      {/* <Footer /> */}
+    </div>
   );
 }
 
