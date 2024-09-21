@@ -5,7 +5,7 @@ import { ReactTyped } from "react-typed";
 import { useLocation } from "react-router-dom";
 import { MdEmail, MdAssignment, MdReportProblem, MdCleanHands } from "react-icons/md";
 import Footer from "../components/Footer";
-import HeroImage from "../assets/landing.png";
+import HeroImage from "../assets/img.png";
 
 const LandingPage = () => {
     const featuresRef = useRef(null);

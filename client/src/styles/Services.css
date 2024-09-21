@@ -433,11 +433,11 @@ body.dark-mode {
 }
 
 .service-box.ongoing {
-  background-image: url('../assets/img1.jpg'); /* Replace with your image */
+  background-image: url('../assets/img5.jpg'); /* Replace with your image */
 }
 
 .service-box.request {
-  background-image: url('../assets/img1.jpg'); /* Replace with your image */
+  background-image: url('../assets/img6.jpg'); /* Replace with your image */
 }
 
 .overlay {
@@ -446,7 +446,7 @@ body.dark-mode {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Overlay color */
+  background-color: rgba(0, 0, 0, 0.7); /* Overlay color */
   display: flex;
   align-items: center;
   justify-content: center;
