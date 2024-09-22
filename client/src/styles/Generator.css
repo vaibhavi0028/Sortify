@@ -1,7 +1,43 @@
+:root {
+  --body-color: #F9F7F7;
+  --color-white: #FFFFFF;
+  --text-color-second: #3F72AF;
+  --text-color-third: #112d4e;
+  --first-color: #3F72AF;
+  --second-color: #DBE2EF;
+  --third-color: #112D4E;
+  --fourth-color: #ffffff;
+  --fifth-color: #e2dfdf;
+  --dark-body-color: #222831;
+  --dark-text-color: #F9F7F7;
+  --dark-text-color-third: #222831;
+  --dark-first-color: #2fbae1;
+  --dark-second-color: #76ABAE;
+  --dark-third-color: #EEEEEE;
+  --dark-fifth-color: #393E46;
+  --first-shadow-color: rgba(255, 255, 255, 0.1);
+  --text-color: #112D4E;
+  --card-bg: #FFFFFF;
+  --card-bg2: #DBE2EF;
+  --card-hover: #3F72AF;
+  --input-border: #DBE2EF;
+  --button-bg: #3F72AF;
+  --button-text: #FFFFFF;
+  --error-color: #ff4444;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color-third);
+}
+
 .generator {
-  padding: 5px 20px;
+  padding: 20px;
   background: var(--body-color);
   min-height: 86.3vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .greeting {
@@ -9,10 +45,101 @@
   color: var(--text-color-third);
 }
 
-.dark-mode .greeting {
-  color: var(--text-color-second);
+.text-editor {
+  margin: 20px 0;
 }
 
-.text-editor{
-    margin: 20px 0;
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--card-hover);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  box-shadow: var(--first-shadow-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--first-color);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .generator {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: var(--dark-body-color);
+  color: var(--dark-text-color);
+}
+
+.dark-mode .greeting {
+  color: var(--dark-text-color-second);
+}
+
+.dark-mode .generator {
+  background: var(--dark-body-color);
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="date"],
+.dark-mode input[type="time"],
+.dark-mode textarea,
+.dark-mode select {
+  background-color: var(--dark-fifth-color);
+  color: var(--dark-text-color);
+  border: 1px solid var(--dark-second-color);
+}
+
+.dark-mode button {
+  background-color: var(--dark-first-color);
+}
+
+.dark-mode button:hover {
+  background-color: var(--dark-second-color);
+}
+
+.confirmation-message-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
