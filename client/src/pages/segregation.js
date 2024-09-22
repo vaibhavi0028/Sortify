@@ -1,14 +1,15 @@
 import React, { useState, useRef } from "react";
 import "../styles/Segregation.css";
 
-const initialKeywords = ["Internship", "Quiz", "DA", "Digital Assignment", "Hackathons"];
+const initialKeywords = ["Internship", "Quiz", "Digital Assignment", "Hackathons"];
 
 const initialMailData = {
-  "Internship": ["Mail 1: Internship details", "Mail 2: Internship opportunity"],
-  "Quiz": ["Mail 1: Quiz schedule", "Mail 2: Quiz results"],
-  "DA": ["Mail 1: DA guidelines", "Mail 2: DA submission dates"],
-  "Digital Assignment": ["Mail 1: DA instructions", "Mail 2: DA topics"],
-  "Hackathons": ["Mail 1: Hackathon invitation", "Mail 2: Hackathon results","Mail 1: Hackathon invitation", "Mail 2: Hackathon results","Mail 1: Hackathon invitation", "Mail 2: Hackathon results","Mail 1: Hackathon invitation", "Mail 2: Hackathon results","Mail 1: Hackathon invitation", "Mail 2: Hackathon results"]
+  "Internship": ["Fwd: Internship Opportunity with CropSky _Transforming Agriculture through Innovation-startup project under preincubation at VITTBI","Fwd: Hairwayon Internship Opportunity - A startup under preincubation with VITTBI"],
+  "Quiz": [],
+  "Digital Assignment": [],
+  "Hackathons": [],
+  "Sports": [
+    "Sports Event - Director Physical Education' via M.Tech. - Computer Science and Engineering 2022 Group, Vellore Campus"]
 };
 
 function Segregation() {
@@ -28,12 +29,14 @@ function Segregation() {
 
   const handleAddKeyword = () => {
     if (newKeyword && !keywords.includes(newKeyword)) {
+      const newMailData = initialMailData[newKeyword] || []; // Check if initial data exists for the new keyword
       setKeywords([...keywords, newKeyword]);
-      setMailData({ ...mailData, [newKeyword]: [] });
+      setMailData({ ...mailData, [newKeyword]: newMailData });
       setNewKeyword("");
       setShowInput(false);
     }
   };
+  
 
   const mailSlidersRef = useRef({});
 
