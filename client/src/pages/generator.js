@@ -217,34 +217,38 @@ const Generator = () => {
         </h1>
         <hr />
       </div>
-      <form
-        id="request-submission-form"
-        style={{ display: confirmationVisible ? "none" : "block" }}
-      >
-        <label htmlFor="request-type">Request Type:</label>
-        <select
-          id="request-type"
-          name="request-type"
-          onChange={handleRequestTypeChange}
-          required
-        >
-          <option value="">Select...</option>
-          <option value="leave">Leave</option>
-          <option value="late-submission">Late Submission</option>
-          <option value="outing">Outing</option>
-        </select>
-        <div
-          id="form-fields"
-          dangerouslySetInnerHTML={{ __html: formFields }}
-        />
-        <button type="button" onClick={showConfirmation}>
-          Preview Message
-        </button>
-      </form>
-
-      {confirmationVisible && (
-        <div className="confirmation-message-conainer">
-          <div id="confirmation-message">
+      
+      <div className="form-container">
+        {!confirmationVisible && (
+          <div className="form-card">
+            <form id="request-submission-form">
+              <label htmlFor="request-type">Request Type:</label>
+              <select
+                id="request-type"
+                name="request-type"
+                onChange={handleRequestTypeChange}
+                required
+              >
+                <option value="">Select...</option>
+                <option value="leave">Leave</option>
+                <option value="late-submission">Late Submission</option>
+                <option value="outing">Outing</option>
+              </select>
+              <div
+                id="form-fields"
+                dangerouslySetInnerHTML={{ __html: formFields }}
+              />
+              <div className="form-card-button">
+              <button type="button" onClick={showConfirmation}>
+                Preview Message
+              </button>
+              </div>
+            </form>
+          </div>
+        )}
+  
+        {confirmationVisible && (
+          <div className="confirmation-message-container">
             <h3>Confirmation Message</h3>
             <div style={{ height: "220px" }}>
               <ReactQuill
@@ -257,24 +261,19 @@ const Generator = () => {
                 style={{ height: "100%" }}
               />
             </div>
+            <div className="button-container">
+              <button onClick={submitFinalRequest}>Submit Request</button>
+              <button onClick={() => setConfirmationVisible(false)}>
+                Cancel
+              </button>
+            </div>
           </div>
-          <div
-            className="button-container"
-            style={{
-              backgroundColor: "transparent",
-              padding: "10px",
-              marginTop: "50px",
-            }}
-          >
-            <button onClick={submitFinalRequest}>Submit Request</button>
-            <button onClick={() => setConfirmationVisible(false)}>
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
+  
+  
 };
 
 export default Generator;
