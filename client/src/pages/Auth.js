@@ -99,7 +99,7 @@ const SignIn = ({ navigate }) => {
         </div>
         <div className="input-control">
           <label>Password</label>
-          <input type="text" value={password} onChange={(e) => setName(e.target.value)} />
+          <input type="password" value={password} onChange={(e) => setName(e.target.value)} />
           {error.password && <p style={{ color: 'red', margin: '10px 0 0 0'  }}>{error.password}</p>}
         </div>
         <div className="forgot-password">Forgot Password?</div>

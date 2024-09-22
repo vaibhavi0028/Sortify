@@ -128,8 +128,8 @@ const Services = () => {
             required
           >
             <option value="">Select hostel type</option>
-            <option value="mens">Mens</option>
-            <option value="womens">Womens</option>
+            <option value="mens">Men</option>
+            <option value="womens">Women</option>
           </select>
         </div>
 

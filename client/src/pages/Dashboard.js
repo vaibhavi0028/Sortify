@@ -5,15 +5,15 @@ import Avatar from "../assets/avatar.svg";
 
 function Dashboard() {
   const important = [
-    "mail 1",
-    "mail 2",
-    "mail 3",
-    "mail 4",
-    "mail 5",
+    "Internship at CropSky",
+    "Accenture Innovation Challenge",
+    "TCS CodeVita",
+    "Calls for interns",
+    "Poster Competition",
     "mail 6",
   ];
 
-  const events = ["mail 1", "mail 2", "mail 3", "mail 4"];
+  const events = ["Events by clubs", "Sports Event", "Accenture Innovation Challenge", "Gravitas Team"];
 
   const handleMouseOver = (e) => {
     const marquee = e.currentTarget;
@@ -38,13 +38,13 @@ function Dashboard() {
           <img src={Avatar} alt="Avatar" className="avatar" />
           <div className="profile-info">
             <p>
-              <strong>Registration No.:</strong> 22BCE0245
+              <strong>Registration No.:</strong> 22MIC0046
             </p>
             <p>
               <strong>Name:</strong> Vaibhavi
             </p>
             <p>
-              <strong>Email:</strong> vaibhavi.2022@vit.ac.in
+              <strong>Email:</strong> vaibhavi.2022a@vitstudent.ac.in
             </p>
           </div>
         </div>

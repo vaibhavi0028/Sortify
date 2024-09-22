@@ -109,7 +109,7 @@ body{
   margin: 10px 10px 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--text-color);
-  width:30%;
+  width:35%;
 }
 
 .avatar {
